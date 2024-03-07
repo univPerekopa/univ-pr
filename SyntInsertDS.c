@@ -21,6 +21,7 @@ bool SyntInsertDS_single(struct dataset_list **dataset_list, struct dataset new_
   new_item->tail = *dataset_list;
   *dataset_list = new_item;
   fprintf(stderr, "SyntInsertDS_single: dataset '%s' have been successfully inserted\n", new_dataset.name);
+  return true;
 }
 
 // insert each dataset from `new_dataset_list` into `dataset_list`
