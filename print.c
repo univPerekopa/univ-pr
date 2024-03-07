@@ -11,13 +11,13 @@ void print_dataset(struct dataset dataset) {
   printf("  is_member_single: %hhd\n", dataset.is_member_single);
   printf("  member_name: %s\n", dataset.member_name);
   printf("  unique_attributes:\n");
-  for (struct attribute_name_list *unique_attributes_ierator = dataset.unique_attributes; unique_attributes_ierator != NULL; unique_attributes_ierator = unique_attributes_ierator->tail) {
-      char *attribute_name = unique_attributes_ierator->head;
+  for (struct attribute_name_list *unique_attributes_iterator = dataset.unique_attributes; unique_attributes_iterator != NULL; unique_attributes_iterator = unique_attributes_iterator->tail) {
+      char *attribute_name = unique_attributes_iterator->head;
       printf("    * %s\n", attribute_name);
   }
   printf("  attribute_list:\n");
-  for (struct attribute_list *attribute_list_ierator = dataset.attribute_list; attribute_list_ierator != NULL; attribute_list_ierator = attribute_list_ierator->tail) {
-      struct attribute attribute = attribute_list_ierator->head;
+  for (struct attribute_list *attribute_list_iterator = dataset.attribute_list; attribute_list_iterator != NULL; attribute_list_iterator = attribute_list_iterator->tail) {
+      struct attribute attribute = attribute_list_iterator->head;
       printf("    * name: %s\n", attribute.name);
       printf("      type: meta_type:  %d\n", attribute.type.meta_type);
       printf("      type: size:  %u\n", attribute.type.size);
