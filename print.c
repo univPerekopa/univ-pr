@@ -24,6 +24,19 @@ void print_dataset(struct dataset dataset) {
   }
   printf("  reverse_name: %s\n", dataset.reverse_name == NULL ? "NULL" : dataset.reverse_name);
   printf("\n");
+  
+  for (struct attribute_list *attribute_list_iterator = dataset.owner_kv; attribute_list_iterator != NULL; attribute_list_iterator = attribute_list_iterator->tail) {
+      struct attribute attribute = attribute_list_iterator->head;
+      printf("    * name: %s\n", attribute.name);
+      printf("      type: meta_type:  %d\n", attribute.type.meta_type);
+      printf("      type: size:  %u\n", attribute.type.size);
+  }
+
+  for (int i = 0; i < 2; i += 1) {
+    printf("%s %s\n", dataset.owner_address + 15 * i, dataset.owner_address + 6 + 15 * i);
+  }
+
+  printf("\n");
 }
 
 void print_dataset_list(struct dataset_list *dataset_list) {

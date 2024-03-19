@@ -32,6 +32,8 @@ struct attribute_name_list {
 struct dataset {
   char *name;
   bool is_owner_single;
+  struct attribute_list *owner_kv;
+  char *owner_address;
   char *owner_name;
   bool is_member_single;
   char *member_name;

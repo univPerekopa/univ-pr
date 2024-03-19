@@ -1,0 +1,4 @@
+Set DC is
+OWNER SINGLE Dep
+MEMBER Ch
+UNIQUE c#;
